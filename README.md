@@ -4,20 +4,12 @@ Practice project with server setup using digital ocean, LEMP stack, Craft CMS, l
 
 
 
-  _________                                 _________ .__                   __   .__  .__          __   
- /   _____/ ______________  __ ___________  \_   ___ \|  |__   ____   ____ |  | _|  | |__| _______/  |_ 
- \_____  \_/ __ \_  __ \  \/ // __ \_  __ \ /    \  \/|  |  \_/ __ \_/ ___\|  |/ /  | |  |/  ___/\   __\
- /        \  ___/|  | \/\   /\  ___/|  | \/ \     \___|   Y  \  ___/\  \___|    <|  |_|  |\___ \  |  |  
-/_______  /\___  >__|    \_/  \___  >__|     \______  /___|  /\___  >\___  >__|_ \____/__/____  > |__|  
-        \/     \/                 \/                \/     \/     \/     \/     \/            \/        
+Droplet Setup Check-List
 
 
-----Droplet Setup Check-List
 
+===========Create Your Droplet=======
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-=============Create Your Droplet===========================================================================================
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digitalocean-droplet
 
   -Log into your Digital Ocean account and create a droplet using the button in the top right or center. 
@@ -26,9 +18,7 @@ https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digita
   
   -SSH keys is the preferred method of login so if you haven’t done so already, generate a SSH key and add the public part of the keys to the droplet. It will end in a .pub extension. 
   
- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-=============Initial Server Set-up===========================================================================================
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=============Initial Server Set-up========
 
 https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
 
@@ -52,9 +42,7 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
   
   -Then reload the SSH daemon. ‘systemctl reload sshd’
   
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-=============Install Ngnix Webserver
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+=============Install Ngnix Webserver========
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-with-http-2-support-on-ubuntu-16-04#step-5-%E2%80%94-avoiding-old-cipher-suites
 
@@ -74,9 +62,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-with-http-2
   
   -Rest of the nginx configurations have not been attempted yet(?).
   
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-=============Install and Secure phpMyAdmin====================================================================================
-///////////////////////////////////////// ////////////////////////////////////////////////////////////////////////////////// 
+=============Install and Secure phpMyAdmin ========
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-16-04
 
   -Install phpmyAdmin: ‘apt-get install phpmyadmin php-mbstring php-gettext’
@@ -111,7 +97,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmy
 -------  Extras -----------
 ///////////////////////////
 
-=============Node.js ========================================================================================================
+=============Node.js =====================
 
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04		
 
@@ -123,7 +109,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubunt
   
   -Finally check that its the latest version with ‘node -v’.	
 
-=============Composer =======================================================================================================
+=============Composer =====================
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-16-04
 
