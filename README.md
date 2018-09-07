@@ -124,8 +124,17 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer
   
   -Type ‘composer’ to make sure you get a output showing the it in fact is installed. 
   
-=============Browser Caching ================================================================================================
+=============Browser Caching =====================
 
 https://www.digitalocean.com/community/tutorials/how-to-implement-browser-caching-with-nginx-s-header-module-on-ubuntu-16-04
 
   -Go to the file path: ‘/etc/nginx/sites-available/default’. Inside the configuration block,found at the top, add the red text
+
+
+=============G-Zipping ==========================
+
+https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-14-04	
+
+=============Modify PHP to fit Server ==========================
+
+https://www.digitalocean.com/community/tutorials/how-to-change-your-php-settings-on-ubuntu-14-04
