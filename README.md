@@ -113,6 +113,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubunt
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-16-04
 
+  -Composer is the dependency manager for php. If you are familar with javascript, think of it as npm but for php. 
+
   -Install composer by typing ‘apt-get install curl php-cli php-mbstring git unzip’
   
   -Make sure you are in the root directory and retrieve the installer : ‘curl -sS https://getcomposer.org/installer -o composer-setup.php’
@@ -128,13 +130,54 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer
 
 https://www.digitalocean.com/community/tutorials/how-to-implement-browser-caching-with-nginx-s-header-module-on-ubuntu-16-04
 
-  -Go to the file path: ‘/etc/nginx/sites-available/default’. Inside the configuration block,found at the top, add the red text
-
+  -A good way to improve on speed of a website is to cache items into the browser of the user so that repeat visits have greatly reduced load times. 
+  
+  -This is done by modifying the code in the server block. Go to the file path: ‘/etc/nginx/sites-available/default’. 
+  
+  -Inside the configuration block,found at the top, define how long you want certain files to cache for:
+      -map $sent_http_content_type $expires {
+          default                    off;
+          text/html                  epoch;
+          text/css                   max;
+          application/javascript     max;
+          ~image/                    max;
+         }
+  -Add to your server block code, ` expires $expires;` 
+  
+  -Restart the server again for changes: ‘service nginx restart’
 
 =============G-Zipping ==========================
 
 https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-14-04	
 
+   -Another great method for optimizing your website is to enable gzipping in your server. Similar to minification of files, gzip compress your files to small sizes. However instead of removing white spaces and comments, the process instead searchs for a repetitive instances of words and maps it to a pointer. Greatly reducing file size, think of all the repeated html code there is!
+   
+  -Gzipping is done automatically by our server as long as we enable it. This time we visit the config file of our webserver at  ‘/etc/nginx/nginx.conf. You ll find the following code. It will be commented out, uncomment it or add if not found. 
+      gzip on;
+      gzip_disable "msie6";
+      gzip_vary on;
+      gzip_proxied any;
+      gzip_comp_level 6;
+      gzip_buffers 16 8k;
+      gzip_http_version 1.1;
+      gzip_min_length 256;    //This means it will not compress if its smaller then 256 bytes. 
+      gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
+      
+  -Restart the server ‘service nginx restart’. 
+  
 =============Modify PHP to fit Server ==========================
 
 https://www.digitalocean.com/community/tutorials/how-to-change-your-php-settings-on-ubuntu-14-04
+
+  -This will be needed for commercial environments. Large file uploads, execution times, multiple files etc. This may not be needed if your project is a small personal project.
+  
+  -To adjust your php settings find your php.ini file in file path /etc/php/7.0/cli/php.ini. Sometimes with multipe php folders, you may need to confirm what the server is actually using by looking at the file path in your server block.
+  
+  -The most typical increases needed are :
+      Set memory_limit to 1G
+      Set post_max_size = 500M
+      Set upload_max_filesize = 500M.
+      Set max_execution_time = 600.
+      
+  -At this point, restart your server with all the new adjustments, `shutdown -r now`.
+
