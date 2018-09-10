@@ -10,6 +10,7 @@
     "node-sass": "^4.9.3",
     "vue": "^2.5.17",
     "vue-meta": "^1.5.3",
+    "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-router": "^1.1.5",
     "vuex-router-sync": "^5.0.0"

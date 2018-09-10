@@ -8,7 +8,7 @@ mix.config.vue.esModule = true
 mix.setPublicPath('html')
 mix
   .js('src/js/app.js', 'html/js')
-  .js('src/vue/main.js', 'html/js/vue.js')
+  .js('src/_vue/main.js', 'html/js/vue.js')
   .sass('src/scss/style.scss', 'html/css')
 
   .sourceMaps()

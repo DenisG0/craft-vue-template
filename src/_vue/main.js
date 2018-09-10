@@ -1,16 +1,13 @@
 import Vue from 'vue'
-import store from '~/../_tracker/store'
-import router from '~/../_tracker/router'
-import App from '~/../_tracker/components/App'
-
-import '~/../_tracker/plugins'
-import '~/../_tracker/components'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+// import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
 new Vue({
-  store,
   router,
-  ...App
-})
+  store,
+  render: h => h(App)
+}).$mount('#app')
